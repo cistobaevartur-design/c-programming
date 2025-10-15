@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 
     
     for (int i = 0; i < 10; ++i) {
-        printf("%.f ", result[i]);
+        printf("%.2f ", result[i]);
     }
     printf("\n");
 
