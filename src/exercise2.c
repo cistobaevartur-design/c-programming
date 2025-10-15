@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 
     
     for (int i = 9; i >= 0; --i) {
-        printf("%.f ", array[i]);
+        printf("%.2f ", array[i]);
     }
 
     printf("\n");
