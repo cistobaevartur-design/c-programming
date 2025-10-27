@@ -6,9 +6,15 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "homework4" branch
   push:
+<<<<<<< HEAD
     branches: [ "homework4" ]
   pull_request:
     branches: [ "homework4" ]
+=======
+    branches: [ "homework5" ]
+  pull_request:
+    branches: [ "homework5" ]
+>>>>>>> b8882fef0e6805602dea9a2e546701644465d17f
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,15 +22,15 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  makeBin:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+<<<<<<< HEAD
       - name: Build all
         run: make
 
@@ -48,3 +54,38 @@ jobs:
 
       - name: Clean
         run: make clean
+=======
+      - name: create a bin directory
+        run: make bin
+
+
+  test1:
+    needs: makeBin
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: running tests for join_int_arrays
+        run: make test1
+        
+  test2:
+    needs: makeBin
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: running tests for join_and_sort_int_arrays
+        run: make test2
+
+  test3:
+    needs: makeBin
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: running tests for get_min_and_max_from_int_array
+        run: make test3
+>>>>>>> b8882fef0e6805602dea9a2e546701644465d17f
