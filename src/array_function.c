@@ -10,7 +10,7 @@ void join_int_arrays(int *src1, size_t size_src1, int *src2, size_t size_src2, i
     }
 }
 
-#include "../include/array_function.h"
+
 
 void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2, int* dest) {
     size_t i = 0, j = 0, k = 0;
