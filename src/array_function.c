@@ -1,4 +1,5 @@
 #include "../include/array_function.h"
+#include <stdio.h>
 
 void join_int_arrays(int *src1, size_t size_src1, int *src2, size_t size_src2, int *dest) {
     for (int i =0; i < size_src1; i++){
